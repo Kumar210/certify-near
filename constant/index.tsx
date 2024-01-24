@@ -1,0 +1,11 @@
+import { REACT_APP_BLOCKCHAIN_API_PROXY } from '../config/index'
+
+const API_CONSTANT = {
+
+    GET_NFT_CONTRACT_ADDRESS: `${REACT_APP_BLOCKCHAIN_API_PROXY}/mynft`,
+    GET_NFT_ID: `${REACT_APP_BLOCKCHAIN_API_PROXY}/nftbyid`
+}
+
+export {
+    API_CONSTANT
+}

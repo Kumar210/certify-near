@@ -1,0 +1,4 @@
+
+export const REACT_APP_BLOCKCHAIN_API_PROXY = "http://10.10.10.162:8000"
+
+// 8939080005
