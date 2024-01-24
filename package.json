@@ -33,6 +33,8 @@
     "@near-wallet-selector/wallet-connect": "^8.9.1",
     "@near-wallet-selector/welldone-wallet": "^8.9.1",
     "@near-wallet-selector/xdefi": "^8.9.1",
+    "@tabler/icons-react": "^2.46.0",
+    "axios": "^1.6.5",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18"

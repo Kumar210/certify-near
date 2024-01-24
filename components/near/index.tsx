@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client"
 
 import type { AccountState, WalletSelector } from "@near-wallet-selector/core";
@@ -20,12 +21,8 @@ import React, {
     useMemo,
 } from "react";
 import { distinctUntilChanged, map } from "rxjs";
-// import Router from 'next/router'
-// import { CreateUser } from "src/utils/Connect_Wallet";
 import Router from "next/router";
-// import { FRONT_END_URL } from "src/config";
 import "@near-wallet-selector/modal-ui/styles.css";
-// import { TREASURER_ADDRESS } from "src/config";
 
 let CONTRACT_ID = "test.testnet"
 const THIRTY_TGAS = "300000000000000";
