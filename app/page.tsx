@@ -5,6 +5,7 @@ import { useWalletSelector } from '../components/near/index';
 import type { AccountView } from "near-api-js/lib/providers/provider";
 import { providers } from 'near-api-js';
 import { Button } from '@mantine/core';
+import { Header } from '@/components/NavBar/Header';
 export type Account = AccountView & {
   account_id: string;
 };
@@ -75,10 +76,14 @@ export default function Home() {
   }
   return (
     <>
-      <Button className="btn btn-secondary" onClick={() => {
-        window.selector.isSignedIn() ? handleSignOut() : handleSignIn()
+      {/* <Button className="btn btn-secondary" onClick={() => { */}
+        {/* window.selector.isSignedIn() ? handleSignOut() : handleSignIn() */}
 
-      }} >{window.selector.isSignedIn() ? account?.account_id : "Longin"} </Button>
+      {/* }} >{window.selector.isSignedIn() ? account?.account_id : "Longin"} </Button> */}
+
+      <div>
+        <Header/>
+      </div>
     </>
   );
 }
