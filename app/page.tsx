@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import { useWalletSelector } from '../components/near/index';
 import type { AccountView } from "near-api-js/lib/providers/provider";
 import { providers } from 'near-api-js';
+import { Button } from '@mantine/core';
 export type Account = AccountView & {
   account_id: string;
 };
@@ -74,15 +75,10 @@ export default function Home() {
   }
   return (
     <>
-      <button className="btn btn-secondary" onClick={() => {
+      <Button className="btn btn-secondary" onClick={() => {
         window.selector.isSignedIn() ? handleSignOut() : handleSignIn()
-        // if (signedAccountId) {
-        //     setAction(() => logOut);
-        //     setLabel(`Logout ${signedAccountId}`);
-        // } else {
 
-        // }
-      }} >{window.selector.isSignedIn() ? account?.account_id : "Longin"} </button>
+      }} >{window.selector.isSignedIn() ? account?.account_id : "Longin"} </Button>
     </>
   );
 }

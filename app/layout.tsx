@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { WalletSelectorContextProvider } from "../components/near/index";
+import '@mantine/core/styles.css';
+import { MantineProvider } from '@mantine/core';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <WalletSelectorContextProvider>
+        <MantineProvider >
+          <WalletSelectorContextProvider>
 
-          {children}
-        </WalletSelectorContextProvider>
+            {children}
+          </WalletSelectorContextProvider>
+        </MantineProvider>
       </body>
     </html>
   );
