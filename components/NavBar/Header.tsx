@@ -54,7 +54,6 @@ export function Header() {
       return setAccount(null);
     }
 
-    // setLoading(true);
 
     getAccount().then((nextAccount: any) => {
       window.accountId = nextAccount?.accountId;
@@ -93,12 +92,15 @@ export function Header() {
           <Title order={2} c={"white"}>CERTIFY</Title>
           <Group gap={"xl"}>
 
-            <Button className="btn btn-secondary" radius={"lg"} style={{ backgroundColor: "white", color: "black" }} onClick={() => {
-              {
-                window.selector.isSignedIn() ? handleSignOut() : handleSignIn()
+            <Button className="btn btn-secondary" radius={"lg"} style={{ backgroundColor: "white", color: "black" }}
+              onClick={() => {
+                {
+                  window.selector.isSignedIn() ? handleSignOut() : handleSignIn()
 
-              }
-            }} >{window.selector.isSignedIn() ? account?.account_id : "Connect"} </Button>
+                }
+              }}
+
+            >{window.selector.isSignedIn() ? account?.account_id : "Connect"} </Button>
           </Group>
         </Box>
         <Box style={{
@@ -117,12 +119,19 @@ export function Header() {
               {
                 window.selector.isSignedIn() ? (<>
                   <Group pt={"xl"}>
-                    <Link href="/nftList"> <Button>
+                    <Link href="/nft"> <Button>
                       Explorer <IconArrowNarrowRight /></Button></Link>
                   </Group>
                 </>) : (<>
                   <Group pt={"xl"}>
-                    <Button>Connect to Wallet <IconArrowNarrowRight /></Button>
+                    <Button
+                      onClick={() => {
+                        {
+                          window.selector.isSignedIn() ? handleSignOut() : handleSignIn()
+
+                        }
+                      }}
+                    >Connect to Wallet <IconArrowNarrowRight /></Button>
                   </Group>
 
                 </>)

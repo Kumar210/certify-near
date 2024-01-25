@@ -5,11 +5,10 @@ import { Card, Image, Text, Badge, Button, Group, Box } from '@mantine/core';
 import { colors } from '@/utils/colorCode';
 
 const index = ({ item }: any) => {
-    console.log(item, "jjjjjjjjjjjjjj")
     return (
         <>
             <Card shadow="sm" padding="lg" radius="md" withBorder h={460} style={{ backgroundColor: colors.bg }}>
-                <Card.Section style={{ backgroundColor: "red" }}>
+                <Card.Section >
                     <Image
                         src={item?.metadata?.media}
                         style={{ height: "250px", objectFit: "fill", width: "100%" }}
@@ -31,9 +30,7 @@ const index = ({ item }: any) => {
                     </Text>
                 </Box>
 
-                {/* <Button color="blue" fullWidth mt="md" radius="md">
-                    {item?.token_id}
-                </Button> */}
+
             </Card>
         </>
     )
