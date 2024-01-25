@@ -1,33 +1,39 @@
 "use client"
 
 import React from 'react'
-import { Card, Image, Text, Badge, Button, Group } from '@mantine/core';
+import { Card, Image, Text, Badge, Button, Group, Box } from '@mantine/core';
+import { colors } from '@/utils/colorCode';
 
-const index = () => {
+const index = ({ item }: any) => {
+    console.log(item, "jjjjjjjjjjjjjj")
     return (
         <>
-            <Card shadow="sm" padding="lg" radius="md" withBorder>
-                <Card.Section>
+            <Card shadow="sm" padding="lg" radius="md" withBorder h={460} style={{ backgroundColor: colors.bg }}>
+                <Card.Section style={{ backgroundColor: "red" }}>
                     <Image
-                        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-                        height={160}
+                        src={item?.metadata?.media}
+                        style={{ height: "250px", objectFit: "fill", width: "100%" }}
+
                         alt="Norway"
                     />
                 </Card.Section>
+                <Box pt={'md'}>
 
-                <Group justify="space-between" mt="md" mb="xs">
-                    <Text fw={500}>Norway Fjord Adventures</Text>
-                    <Badge color="pink">On Sale</Badge>
-                </Group>
+                    <Group justify="space-between" mt="md" mb="xs">
+                        <Text fw={500} c={colors.text}>{item?.metadata?.title}</Text>
+                        <Badge color="pink">
+                            {item?.token_id}
+                        </Badge>
+                    </Group>
 
-                <Text size="sm" c="dimmed">
-                    With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-                    activities on and around the fjords of Norway
-                </Text>
+                    <Text size="sm" c="dimmed" >
+                        {item?.metadata?.description}
+                    </Text>
+                </Box>
 
-                <Button color="blue" fullWidth mt="md" radius="md">
-                    Book classic tour now
-                </Button>
+                {/* <Button color="blue" fullWidth mt="md" radius="md">
+                    {item?.token_id}
+                </Button> */}
             </Card>
         </>
     )
